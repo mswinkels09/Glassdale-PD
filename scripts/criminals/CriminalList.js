@@ -12,6 +12,10 @@ export const CriminalList = () => {
             criminalArray.forEach(criminal => {
                 criminalHTMLRepresentations += CriminalHTMLConverter(criminal)
             })
-            contentTarget.innerHTML = criminalHTMLRepresentations
+            contentTarget.innerHTML = `
+                <h2 class="criminals__title">Convicted Criminals</h2>
+                <section class="criminals">
+                    ${criminalHTMLRepresentations}
+                </section>`
         })
 }
