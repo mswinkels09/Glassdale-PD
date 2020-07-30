@@ -1,0 +1,18 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "title": "what this note is about",
+      "content": "notes about the criminal/event",
+      "timestamp": "07/29/2020",
+      "author": "John Doe"
+    },
+    {
+      "title": "",
+      "author": "",
+      "content": "",
+      "timestamp": 1596122810692,
+      "id": 2
+    }
+  ]
+}

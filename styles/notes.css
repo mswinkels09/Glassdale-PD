@@ -1,0 +1,25 @@
+.noteListContainer {
+    border: dotted 0.5px crimson;
+}
+
+.note {
+    border: dotted 1px blue;
+    padding: 0.5rem;
+}
+
+.note--header {
+    display: flex;
+    justify-content: center;
+}
+
+.note--title {
+    padding-bottom: 2px;
+    display: flex;
+    justify-content: center;
+}
+
+.note--content {
+    padding-bottom: 2px;
+    display: flex;
+    justify-content: center;
+}

@@ -1,2 +1,15 @@
 @import "./criminals.css";
 @import "./officers.css";
+@import "./notes.css";
+
+.lists {
+    display: flex;
+}
+
+.noteListContainer {
+    flex: 1;
+}
+
+.peopleList {
+    flex: 4;
+}
