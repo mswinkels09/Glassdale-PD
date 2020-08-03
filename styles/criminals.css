@@ -11,6 +11,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+        
+}
+.criminal {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .criminal__name {

@@ -1,6 +1,7 @@
 @import "./criminals.css";
 @import "./officers.css";
 @import "./notes.css";
+@import "./witness.css";
 
 .lists {
     display: flex;

@@ -32,20 +32,36 @@ eventHub.addEventListener('crimeChosen', crimeSelectedEvent => {
     }
 )
 
-eventHub.addEventListener('officerSelected', (officerSelectedEvent) => {
+// eventHub.addEventListener('alibiSelected', (event) => {
+//     console.log("CriminalList: Custom alibiSelected event heard on event hub")
+//     // How can you access the officer name that was selected by the user?
+//     const alibiChosen = event.detail.known_associatesId
+
+//     // How can you get the criminals that were arrested by that officer?
+//     const criminals = useCriminals()
+//     const filteredCriminals = criminals.filter(
+//         (criminalObject) => {
+//             return criminalObject.known_associates  === alibiChosen
+            
+//         }
+//     )
+//     render(filteredCriminals)
+// })
+
+eventHub.addEventListener('officerSelected', (event) => {
     console.log("CriminalList: Custom officerSelected event heard on event hub")
     // How can you access the officer name that was selected by the user?
-    const officerChosen = officerSelectedEvent.detail.officerName
+    const officerChosen = event.detail.officerName
 
     // How can you get the criminals that were arrested by that officer?
     const criminals = useCriminals()
-    const filteredOfficers = criminals.filter(
+    const filteredCriminals = criminals.filter(
         (criminalObject) => {
             return criminalObject.arrestingOfficer  === officerChosen
             
         }
     )
-    render(filteredOfficers)
+    render(filteredCriminals)
 })
 
 
@@ -59,7 +75,8 @@ const render = (criminalCollection) => {
     contentTarget.innerHTML = 
             `<h2 class="criminals__title">Convicted Criminals</h2>
             <section class="criminals">
-                ${criminalHTMLRepresentations}
+                <div class="criminal">${criminalHTMLRepresentations}</div>
+
             </section>`
 }
 
