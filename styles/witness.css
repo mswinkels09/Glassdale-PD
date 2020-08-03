@@ -1,24 +1,24 @@
-.note--container {
+.witness--container {
     border: dotted 0.5px crimson;
 }
 
-.note {
+.witnessNote {
     border: dotted 1px blue;
     padding: 0.5rem;
 }
 
-.note--header {
+.witness--header {
     display: flex;
     justify-content: center;
 }
 
-.note--title {
+.witness--name {
     padding-bottom: 2px;
     display: flex;
     justify-content: center;
 }
 
-.note--content {
+.witness--statement {
     padding-bottom: 2px;
     display: flex;
     justify-content: center;

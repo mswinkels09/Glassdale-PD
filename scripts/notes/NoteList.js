@@ -1,7 +1,7 @@
 import { getNotes, useNotes } from "./NoteDataProvider.js";
 import { NoteHTMLConverter } from "./NoteHTMLConverter.js";
 
-const contentTarget = document.querySelector(".noteList")
+const contentTarget = document.querySelector(".noteListContainer")
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("NotesButtonClicked", customEvent => {
@@ -17,11 +17,26 @@ export const NoteList = () => {
 }
 
 const render = (noteArray) => {
-    const notesConvertedToStrings = noteArray.map(
-        (currentNote) => {
-            return NoteHTMLConverter(currentNote)
-        }
-    ).join("")
+    contentTarget.innerHTML = `
+        <aside class="note--container">
+            <h2 class="note--header"> Notes </h2>
+            <article class="noteList">
+            ${
+                noteArray.map(
+                (currentNote) => {
+                    return NoteHTMLConverter(currentNote)
+                }
+                ).join("")
+            }
+            </article>
+                
+        </aside> `
 
-    contentTarget.innerHTML = notesConvertedToStrings
 }
+
+
+//renders notes list after you click the save note button
+// eventHub.addEventListener("noteStateChanged", () => {
+//     const newNotes = useNotes()
+//     render(newNotes)
+// })
