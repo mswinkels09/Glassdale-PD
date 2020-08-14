@@ -8,7 +8,10 @@ const eventHub = document.querySelector(".container")
 const render = (notes) => {
     const criminals = useCriminals()
 
-    contentTarget.innerHTML = notes.reverse().map(
+    contentTarget.innerHTML = `
+    <section class="noteList">
+    <h2 class="note--header">Note List</h2>
+    ${notes.reverse().map(
         (noteObject) => {
             //.find the criminal the note is about
             const foundCriminal = criminals.find(
@@ -18,8 +21,11 @@ const render = (notes) => {
             )
             //Send criminal to the html converter
             return NoteHTMLConverter(noteObject, foundCriminal)
+            
         }
     ).join("")
+    }
+    </section>`
 }
 
 export const NoteList = () => {

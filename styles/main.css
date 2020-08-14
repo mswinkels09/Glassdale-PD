@@ -2,9 +2,12 @@
 @import "./officers.css";
 @import "./notes.css";
 @import "./witness.css";
+@import "./header.css";
+@import "./noteForm.css";
 
 .lists {
     display: flex;
+    margin-top: 15px;
 }
 
 .noteListContainer {
@@ -13,4 +16,14 @@
 
 .peopleList {
     flex: 4;
+}
+
+.listButtons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.mainTitle {
+    display:flex;
+    justify-content: center;
 }

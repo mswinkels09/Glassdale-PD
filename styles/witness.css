@@ -23,3 +23,8 @@
     display: flex;
     justify-content: center;
 }
+
+.witnessListButton {
+    display: flex;
+    justify-content: flex-end;
+}

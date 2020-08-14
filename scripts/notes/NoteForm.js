@@ -50,24 +50,24 @@ export const NoteForm = () => {
 const render = (criminals) => {
     contentTarget.innerHTML = `
     <section class="noteForm">
-        <input type="text" id="note--title"  placeHolder="Enter title of note..."/>
-        <input type="text" id="note--author" placeHolder="Enter your name..." />
+        <input type="text" id="note--title" class="noteFormTitle" placeHolder="Enter title of note..."/>
         <select id="note--criminal" class="criminalSelect">
-            <option value="0">Select criminal..</option>
-            ${
-                criminals.map(
-                    (criminalObject) => {
-                        return `<option value="${criminalObject.id}">
-                            ${criminalObject.name}
-                        </option>`
-
-                    }
+        <option class="noteCriminalSelected" value="0">Select criminal..</option>
+        ${
+            criminals.map(
+                (criminalObject) => {
+                    return `<option class="noteCriminalSelected" value="${criminalObject.id}">
+                    ${criminalObject.name}
+                    </option>`
+                    
+                }
                 )
             }
             
-        </select>
-        <textarea id="note--content" placeHolder="Enter note content here..."></textarea>           
-        <button id="saveNote">Save Note</button>
+            </select>
+            <textarea id="note--content" class="noteFormContent" placeHolder="Enter note content here..."></textarea>           
+            <input type="text" id="note--author" class="noteFormAuthor" placeHolder="Enter your name..." />
+        <button id="saveNote" class="saveNote">Save Note</button>
     </section>
             `
 }
