@@ -5,6 +5,8 @@ import { useCriminals } from "../criminals/CriminalProvider.js"
 const contentTarget = document.querySelector(".noteListContainer")
 const eventHub = document.querySelector(".container")
 
+
+
 const render = (notes) => {
     const criminals = useCriminals()
 

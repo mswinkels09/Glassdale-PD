@@ -27,3 +27,7 @@
     display: flex;
     justify-content: center;
 }
+
+.associateCloseButton {
+    margin-top: 10px;
+}

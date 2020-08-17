@@ -16,7 +16,7 @@ eventHub.addEventListener("associatesClicked", customEvent => {
             return `
                 <h4>${associate.name}</h4>
                 <div>${associate.alibi}</div>
-                <button id="associateCloseButton">Close</button>
+                <button id="associateCloseButton" class="associateCloseButton">Close</button>
             `
         }).join("")
     }`

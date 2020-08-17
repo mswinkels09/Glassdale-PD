@@ -1,14 +1,6 @@
 {
   "notes": [
     {
-      "title": "ikh",
-      "author": "ghv",
-      "criminalId": 7,
-      "content": "kjg",
-      "timestamp": 1597343116779,
-      "id": 4
-    },
-    {
       "title": "",
       "author": "",
       "criminalId": 2,
@@ -17,11 +9,11 @@
       "id": 5
     },
     {
-      "title": "",
-      "author": "",
-      "criminalId": 16,
-      "content": "",
-      "timestamp": 1597345488888,
+      "title": "poi",
+      "author": "Jane Smith",
+      "criminalId": 25,
+      "content": "Definitely did it",
+      "timestamp": 1597679637346,
       "id": 6
     }
   ]

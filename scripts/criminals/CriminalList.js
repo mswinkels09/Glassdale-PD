@@ -64,8 +64,8 @@ const render = (criminalCollection) => {
         `<h2 class="criminals__title">Convicted Criminals</h2>
         <section class="criminals">
             <div class="criminal">${criminalHTMLRepresentations}</div>
-            </section>
-            ${AssociatesDialog}
+        </section>
+        ${AssociatesDialog}
         `
 }
 
