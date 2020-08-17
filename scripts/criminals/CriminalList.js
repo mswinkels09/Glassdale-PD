@@ -1,6 +1,7 @@
 import { getCriminals, useCriminals } from './CriminalProvider.js'
 import { CriminalHTMLConverter } from './CriminalHTMLConverter.js'
 import { useConvictions } from "../convictions/ConvictionProvider.js";
+import { AssociatesDialog } from "./AlibiSelect.js";
 
 const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
@@ -12,9 +13,9 @@ eventHub.addEventListener('crimeChosen', crimeSelectedEvent => {
     const crimeThatWasSelected = crimeSelectedEvent.detail.crimeId
     //Get the crime name that matches the id
     const arrayOfCrimes = useConvictions()
-     const matchingCrimes = arrayOfCrimes.find(
+    const matchingCrimes = arrayOfCrimes.find(
          (crime) => {
-         return crimeThatWasSelected === crime.name
+         return parseInt(crimeThatWasSelected) === crime.id
         })
         /*Filter the criminals application state down to the people that committed the crime*/
 
@@ -32,21 +33,8 @@ eventHub.addEventListener('crimeChosen', crimeSelectedEvent => {
     }
 )
 
-// eventHub.addEventListener('alibiSelected', (event) => {
-//     console.log("CriminalList: Custom alibiSelected event heard on event hub")
-//     // How can you access the officer name that was selected by the user?
-//     const alibiChosen = event.detail.known_associatesId
 
-//     // How can you get the criminals that were arrested by that officer?
-//     const criminals = useCriminals()
-//     const filteredCriminals = criminals.filter(
-//         (criminalObject) => {
-//             return criminalObject.known_associates  === alibiChosen
-            
-//         }
-//     )
-//     render(filteredCriminals)
-// })
+
 
 eventHub.addEventListener('officerSelected', (event) => {
     console.log("CriminalList: Custom officerSelected event heard on event hub")
@@ -68,16 +56,17 @@ eventHub.addEventListener('officerSelected', (event) => {
 const render = (criminalCollection) => {
     let criminalHTMLRepresentations = ""
 
-    criminalCollection.forEach(criminal => {
+    criminalCollection.forEach( criminal => {
         criminalHTMLRepresentations += CriminalHTMLConverter(criminal)
     })
 
     contentTarget.innerHTML = 
-            `<h2 class="criminals__title">Convicted Criminals</h2>
-            <section class="criminals">
-                <div class="criminal">${criminalHTMLRepresentations}</div>
-
-            </section>`
+        `<h2 class="criminals__title">Convicted Criminals</h2>
+        <section class="criminals">
+            <div class="criminal">${criminalHTMLRepresentations}</div>
+        </section>
+        ${AssociatesDialog}
+        `
 }
 
 

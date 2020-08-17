@@ -1,0 +1,27 @@
+.noteForm {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.noteFormTitle {
+    
+    width:25%;
+
+}
+
+.noteFormAuthor {
+    width:25%;
+}
+
+.criminalSelect {
+    width:25%;
+}
+
+.noteFormContent {
+    width: 50%
+}
+
+.saveNote {
+    width: 20%;
+}
