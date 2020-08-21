@@ -15,7 +15,8 @@ contentTarget.addEventListener("change", (event) => {
         // Create custom event. Provide an appropriate name.
         const customEvent = new CustomEvent("crimeChosen", {
             detail: {
-                crimeId: event.target.value
+                crimeId: event.target.value,
+                crimeName: event.target.innerHTML
             }
         })
 
@@ -36,7 +37,7 @@ const render = convictionsCollection => {
             ${
                 convictionsCollection.map(
                     convictionObject => {
-                        return `<option>${convictionObject.name}</option>`
+                        return `<option value="${ convictionObject.id }">${convictionObject.name}</option>`
                     }
                 ).join("") //prevents "," from showing up. (makes outcome a string instead of an array)
             }
